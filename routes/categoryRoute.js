@@ -2,6 +2,7 @@ import express from 'express'
 import {
   categoryController,
   createCategoryController,
+  deleteCategoryController,
   singleCategoryController,
   updateCategoryController
 } from '../controllers/categoryController.js'
@@ -16,5 +17,5 @@ router.get('/category', categoryController)
 
 router.get('/single-category/:slug', singleCategoryController)
 
-router.delete('/delete-category', requireSignin)
+router.delete('/delete-category/:id', requireSignin, deleteCategoryController)
 export default router
